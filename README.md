@@ -79,32 +79,32 @@ end
   end
 ```
 
-## 3. Create Model
-### Generate model
+### 3. Create Model
+#### Generate model
 ```bash
   rails g model <model-name> <...attributes>
 ```
-### Migrate
+#### Migrate
 ```bash
   rails db:migrate
 ```
 
-### Write model spec
+#### Write model spec
 ```ruby
 # spec/models/<model-name>_spec.rb
 
-RSpec.describe <model-name>, type: :model do
-  # Association test example
-  it { should have_many(:some_models_1).dependent(:destroy) } # 1:m rel with Some model
-  it { should belong_to(:some_models_2) } # m:1 rel with Some model
-  
-  # Validation test example (verify presence of data before saving)
-  it { should validate_presence_of(:some_attribute) }
-  
+ RSpec.describe <model-name>, type: :model do
+   # Association test example
+   it { should have_many(:some_models_1).dependent(:destroy) } # 1:m rel with Some model
+   it { should belong_to(:some_models_2) } # m:1 rel with Some model
+
+   # Validation test example (verify presence of data before saving)
+   it { should validate_presence_of(:some_attribute) }
+
 ```
-### Running test
+#### Running test
 ```bash
   bundle exec rspec
 ```
-### Fixing Model file
-Fixing model file to pass the test.
+#### Fixing model file
+Fixing model file to pass all tests.
